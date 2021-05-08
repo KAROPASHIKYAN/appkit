@@ -22,5 +22,7 @@ if (have_rows('sections')):
 
     endwhile;
 endif;
+$sections = get_field ('sections');
+b($sections);
 
 get_footer();
