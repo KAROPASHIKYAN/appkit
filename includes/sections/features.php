@@ -9,7 +9,7 @@
             <ul class="feature-nav nav nav-pill nav-stacked text-left col-md-4 col-sm-6 col-xs-12 col-md-push-8 col-sm-push-6 col-xs-push-0" role="tablist">
                 <?php $features = get_sub_field('features');?>
                 <?php foreach ($features as $key => $feature): ?>
-                <li role="presentation" <?= $key == 0 ? 'class="active"': ''; ?>><a href="#feature-<?= ++$key; ?>" aria-controls="feature-<?= $key; ?>" role="tab" data-toggle="tab"><i class="<?= $feature['icon']; ?>"></i><?= $feature['presentation']; ?></a></li>
+                <li role="presentation" <?= $key == 0 ? 'class="active"': ''; ?>><a href="#feature-<?= ++$key; ?>" aria-controls="feature-<?= $key; ?>" role="tab" data-toggle="tab"><i class="fa fa-<?= $feature['icon']; ?>"></i><?= $feature['presentation']; ?></a></li>
                 <?php endforeach; ?>
             </ul>
 
