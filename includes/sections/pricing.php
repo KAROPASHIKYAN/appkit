@@ -1,56 +1,24 @@
 <div id="pricing" class="pricing-section">
     <div class="container text-center">
-        <h2 class="section-title">Pricing</h2>
-        <div class="intro">AppKit's future updates are 100% FREE for existing customers</div>
+        <h2 class="section-title"><?the_sub_field ('title');?></h2>
+        <div class="intro"><?the_sub_field ('intro');?></div>
         <div class="pricing-wrapper">
-            <div class="item item-1 col-md-4 col-sm-4 col-xs-12">
+            <?php $items = get_sub_field('items'); ?>
+            <?php foreach ($items as $key => $item):?>
+            <div class="item item-<?= ++$key;?> col-md-4 col-sm-4 col-xs-12">
                 <div class="item-inner">
-                    <h3 class="item-heading">Single Application</h3>
+                    <h3 class="item-heading"><?= $item['head'] ;?></h3>
                     <div class="price-figure">
-                        <span class="currency">$</span><span class="number">20</span>
+                        <span class="currency"><?= $item['currency'] ;?></span><span class="number"><?= $item['number'] ;?></span>
                     </div><!--//price-figure-->
                     <div class="price-desc">
-                        <p>Restricted to a single installation...</p>
-                        <a href="https://wrapbootstrap.com/theme/admin-appkit-admin-theme-angularjs-WB051SCJ1?ref=3wm" target="_blank">License Details</a>
-
-
+                        <p><?= $item['desc'] ;?></p>
+                        <a href="<?= $item['details']['url'] ;?>" target="_blank"><?= $item['details']['title'] ;?></a>
                     </div><!--//price-desc-->
-                    <a class="btn btn-cta" href="https://wrapbootstrap.com/theme/admin-appkit-admin-theme-angularjs-WB051SCJ1?ref=3wm">Buy Now</a>
-
+                    <a class="btn btn-cta" href="<?= $item['buy']['url'] ;?>"><?= $item['buy']['title'] ;?></a>
                 </div><!--//item-inner-->
             </div><!--//item-->
-            <div class="item item-2 col-md-4 col-sm-4 col-xs-12">
-                <div class="item-inner">
-                    <h3 class="item-heading">Multiple Applications</h3>
-                    <div class="price-figure">
-                        <span class="currency">$</span><span class="number">80</span>
-                    </div><!--//price-figure-->
-                    <div class="price-desc">
-                        <p>May extend to multiple installations...</p>
-                        <a href="https://wrapbootstrap.com/theme/admin-appkit-admin-theme-angularjs-WB051SCJ1?ref=3wm" target="_blank">License Details</a>
-
-
-                    </div><!--//price-desc-->
-                    <a class="btn btn-cta" href="https://wrapbootstrap.com/theme/admin-appkit-admin-theme-angularjs-WB051SCJ1?ref=3wm">Buy Now</a>
-
-                </div><!--//item-inner-->
-            </div><!--//item-->
-
-            <div class="item item-3 col-md-4 col-sm-4 col-xs-12">
-                <div class="item-inner">
-                    <h3 class="item-heading">Extended</h3>
-                    <div class="price-figure">
-                        <span class="currency">$</span><span class="number">1200</span>
-                    </div><!--//price-figure-->
-                    <div class="price-desc">
-                        <p>May license, sublicense, redistribute, or resell the item...</p>
-                        <a href="https://wrapbootstrap.com/theme/admin-appkit-admin-theme-angularjs-WB051SCJ1?ref=3wm" target="_blank">License Details</a>
-                    </div><!--//price-desc-->
-                    <a class="btn btn-cta" href="https://wrapbootstrap.com/theme/admin-appkit-admin-theme-angularjs-WB051SCJ1?ref=3wm" target="_blank">Buy Now</a>
-
-                </div><!--//item-inner-->
-            </div><!--//item-->
+            <?php endforeach;?>
         </div><!--//pricing-wrapper-->
-
     </div><!--//container-->
 </div><!--//pricing-section-->
