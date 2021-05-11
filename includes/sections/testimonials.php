@@ -1,8 +1,9 @@
+<?php $comments = get_sub_field('comments'); ?>
 <div id="testimonials" class="testimonials-section">
     <div class="container">
         <h2 class="section-title text-center"><? the_sub_field('title');?></h2>
-        <?php $comments = get_sub_field('comments'); ?>
-        <?php foreach ($comments as $key => $comment): ?>
+        <?php if (!empty($comments)): ?>
+            <?php foreach ($comments as $key => $comment): ?>
         <div class="item <?= $key == 0 || $key % 2 == 0 ? '': 'item-reversed';?> center-block">
             <div class="profile-holder">
                 <img class="profile-image" src="<?= $comment['ava']['url']; ?>" alt="profile">
@@ -17,6 +18,7 @@
                 </blockquote>
             </div><!--//quote-holder-->
         </div><!--//item-->
-        <?php endforeach; ?>
+            <?php endforeach; ?>
+        <? endif; ?>
     </div><!--//container-->
 </div><!--//testimonials-->
