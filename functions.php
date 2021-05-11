@@ -51,6 +51,11 @@ function b($a)
     echo "</pre>";
 }
 
+function logo($str){
+    $str = strtoupper ($str);
+    $str = explode(" ", $str);
+    return $str;
 
+}
 
 
