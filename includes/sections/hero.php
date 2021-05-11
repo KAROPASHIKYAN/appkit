@@ -33,18 +33,18 @@ $items = get_sub_field('items');
         <!-- Wrapper for slides -->
         <div class="carousel-inner">
             <?php if (!empty($items)): ?>
-            <?php foreach ($items as $key=>$item): ?>
-            <div class="item item-<?= ++$key;?> <?= $key == 1 ?  'active' : '' ; ?>">
-                <div class="item-content container">
-                    <div class="item-content-inner">
-                        <h2 class="heading"><?= $item['head']; ?></h2>
-                        <p class="intro"><?= $item['content']; ?></p>
-                        <a class="btn btn-primary btn-cta" href="<?= $item['button']['url']; ?>"
-                           target="_blank"><?php echo $item['button']['title']; ?></a>
-                    </div><!--//item-content-inner-->
-                </div><!--//item-content-->
-            </div><!--//item-->
-            <?php endforeach; ?>
+                <?php foreach ($items as $key => $item): ?>
+                    <div class="item item-<?= ++$key; ?> <?= $key == 1 ? 'active' : ''; ?>">
+                        <div class="item-content container">
+                            <div class="item-content-inner">
+                                <h2 class="heading"><?= $item['head']; ?></h2>
+                                <p class="intro"><?= $item['content']; ?></p>
+                                <a class="btn btn-primary btn-cta" href="<?= $item['button']['url']; ?>"
+                                   target="_blank"><?php echo $item['button']['title']; ?></a>
+                            </div><!--//item-content-inner-->
+                        </div><!--//item-content-->
+                    </div><!--//item-->
+                <?php endforeach; ?>
             <?php endif; ?>
         </div><!--//carousel-inner-->
 
