@@ -22,16 +22,17 @@ $items = get_sub_field('items');
 
 
         <!-- Indicators -->
-        <ol class="carousel-indicators">
-            <?php foreach ($items as $key => $item): ?>
-                <li class="<?= $key == 0 ? 'active' : ''; ?>" data-slide-to="<?= $key; ?>"
-                    data-target="#hero-carousel"></li>
-            <?php endforeach; ?>
-        </ol>
-
+        <?php if (!empty($items)): ?>
+            <ol class="carousel-indicators">
+                <?php foreach ($items as $key => $item): ?>
+                    <li class="<?= $key == 0 ? 'active' : ''; ?>" data-slide-to="<?= $key; ?>"
+                        data-target="#hero-carousel"></li>
+                <?php endforeach; ?>
+            </ol>
+        <?php endif; ?>
         <!-- Wrapper for slides -->
         <div class="carousel-inner">
-
+            <?php if (!empty($items)): ?>
             <?php foreach ($items as $key=>$item): ?>
             <div class="item item-<?= ++$key;?> <?= $key == 1 ?  'active' : '' ; ?>">
                 <div class="item-content container">
@@ -44,7 +45,7 @@ $items = get_sub_field('items');
                 </div><!--//item-content-->
             </div><!--//item-->
             <?php endforeach; ?>
-
+            <?php endif; ?>
         </div><!--//carousel-inner-->
 
     </div><!--//carousel-->
