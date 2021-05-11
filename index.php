@@ -18,11 +18,9 @@ if (have_rows('sections')):
             sections('team');
         } elseif (get_row_layout() == 'testimonials') {
             sections('testimonials');
-        }
+
+    }
 
     endwhile;
 endif;
-$sections = get_field ('sections');
-b($sections);
-
 get_footer();
